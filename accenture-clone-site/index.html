@@ -1569,7 +1569,6 @@
     #archon-build-process {
         background: #000;
         color: #fff;
-        min-height: 260vh;
         overflow-x: clip;
         position: relative;
     }
@@ -1578,8 +1577,6 @@
         margin: 0 auto;
         max-width: 1280px;
         padding: 84px var(--rad-spacing-sm) 64px;
-        position: sticky;
-        top: calc(var(--rad-nav-height) + 12px);
     }
 
     #archon-build-process .archon-build-process__title {
@@ -1607,62 +1604,31 @@
 
     #archon-build-process .archon-build-process__timeline {
         margin: 0 auto;
-        padding-top: 6px;
-        position: relative;
         width: 100%;
     }
 
-    #archon-build-process .archon-build-process__line-base,
-    #archon-build-process .archon-build-process__line-progress {
-        border-radius: 999px;
-        height: 3px;
-        position: absolute;
-        top: 18px;
-        z-index: 1;
-    }
-
-    #archon-build-process .archon-build-process__line-base {
-        background: #2a2a2a;
-    }
-
-    #archon-build-process .archon-build-process__line-progress {
-        background: #a100ff;
-        width: 0;
-    }
-
     #archon-build-process .archon-build-process__nodes {
-        display: grid;
-        gap: 0;
-        grid-template-columns: repeat(4, minmax(220px, 1fr));
+        display: flex;
+        gap: 16px;
+        width: 100%;
     }
 
     #archon-build-process .archon-build-process__step {
-        padding: 0 18px;
-        text-align: center;
-    }
-
-    #archon-build-process .archon-build-process__step-circle {
-        background: #000;
-        border: 3px solid #ffffff;
-        border-radius: 50%;
-        height: 18px;
-        margin: 6px auto 24px;
-        position: relative;
-        transition: border-color 380ms ease, box-shadow 380ms ease;
-        width: 18px;
-        z-index: 2;
-    }
-
-    #archon-build-process .archon-build-process__step-label {
-        color: #a7a7a7;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        margin-bottom: 10px;
-        opacity: 0.35;
-        text-transform: uppercase;
-        transform: translateY(18px);
-        transition: opacity 420ms ease, transform 420ms ease;
+        align-items: flex-start;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 280px;
+        opacity: 0.5;
+        overflow: hidden;
+        padding: 28px 24px;
+        transform: scale(0.9);
+        transform-origin: center center;
+        will-change: transform, opacity, flex-grow;
     }
 
     #archon-build-process .archon-build-process__step-title {
@@ -1670,65 +1636,36 @@
         font-weight: 500;
         letter-spacing: -0.01em;
         line-height: 1.25;
-        margin: 0 0 10px;
-        opacity: 0.35;
-        transform: translateY(18px);
-        transition: opacity 420ms ease, transform 420ms ease;
+        margin: 0;
+        opacity: 1;
+        white-space: nowrap;
     }
 
     #archon-build-process .archon-build-process__step-body {
         color: #c9c9c9;
         font-size: clamp(0.95rem, 1.25vw, 1.05rem);
         line-height: 1.52;
-        margin: 0 auto;
-        max-width: 290px;
-        opacity: 0.28;
-        transform: translateY(18px);
-        transition: opacity 420ms ease, transform 420ms ease;
-    }
-
-    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-circle {
-        border-color: #ffffff;
-        box-shadow: 0 0 0 6px rgba(161, 0, 255, 0.18);
-    }
-
-    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-label,
-    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-title,
-    #archon-build-process .archon-build-process__step.is-active .archon-build-process__step-body {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @media (min-width: 1024px) {
-        #archon-build-process {
-            min-height: 300vh;
-        }
+        margin: 18px 0 0;
+        max-height: 0;
+        max-width: 440px;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
     }
 
     @media (max-width: 768px) {
-        #archon-build-process {
-            min-height: auto;
-        }
-
         #archon-build-process .archon-build-process__inner {
             padding: 96px var(--rad-spacing-sm) 84px;
-            position: relative;
-            top: auto;
         }
 
-        #archon-build-process .archon-build-process__timeline {
-            width: 100%;
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        #archon-build-process .archon-build-process__line-progress {
-            transition: none;
+        #archon-build-process .archon-build-process__nodes {
+            overflow-x: auto;
+            padding-bottom: 4px;
         }
 
-        #archon-build-process .archon-build-process__step-circle,
-        #archon-build-process .archon-build-process__step-body {
-            transition: none;
+        #archon-build-process .archon-build-process__step {
+            min-height: 190px;
+            min-width: 38vw;
         }
     }
 
@@ -2559,39 +2496,28 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 	<div class="archon-build-process__inner">
 		<h2 class="archon-build-process__title">How Archon Builds AI Systems</h2>
 		<p class="archon-build-process__intro">A structured engineering process ensures AI systems move from concept to reliable enterprise infrastructure.</p>
-		<div class="archon-build-process__timeline-scroll">
-			<div class="archon-build-process__timeline" id="archon-build-process-timeline">
-				<div class="archon-build-process__line-base" aria-hidden="true"></div>
-				<div class="archon-build-process__line-progress" aria-hidden="true"></div>
+			<div class="archon-build-process__timeline-scroll">
+				<div class="archon-build-process__timeline" id="archon-build-process-timeline">
+					<div class="archon-build-process__nodes">
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Architecture</h3>
+							<p class="archon-build-process__step-body">Define system architecture, infrastructure requirements, and governance controls.</p>
+						</article>
 
-				<div class="archon-build-process__nodes">
-					<article class="archon-build-process__step">
-						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
-						<div class="archon-build-process__step-label">Step 1</div>
-						<h3 class="archon-build-process__step-title">Architecture</h3>
-						<p class="archon-build-process__step-body">Define system architecture, infrastructure requirements, and governance controls.</p>
-					</article>
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Prototype</h3>
+							<p class="archon-build-process__step-body">Develop targeted prototypes to validate system behavior and integration.</p>
+						</article>
 
-					<article class="archon-build-process__step">
-						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
-						<div class="archon-build-process__step-label">Step 2</div>
-						<h3 class="archon-build-process__step-title">Prototype</h3>
-						<p class="archon-build-process__step-body">Develop targeted prototypes to validate system behavior and integration.</p>
-					</article>
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Deployment</h3>
+							<p class="archon-build-process__step-body">Deploy production-ready AI systems with monitoring, security, and reliability mechanisms.</p>
+						</article>
 
-					<article class="archon-build-process__step">
-						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
-						<div class="archon-build-process__step-label">Step 3</div>
-						<h3 class="archon-build-process__step-title">Deployment</h3>
-						<p class="archon-build-process__step-body">Deploy production-ready AI systems with monitoring, security, and reliability mechanisms.</p>
-					</article>
-
-					<article class="archon-build-process__step">
-						<div class="archon-build-process__step-circle" aria-hidden="true"></div>
-						<div class="archon-build-process__step-label">Step 4</div>
-						<h3 class="archon-build-process__step-title">Optimization</h3>
-						<p class="archon-build-process__step-body">Continuously evaluate and improve system performance, workflows, and operational stability.</p>
-					</article>
+						<article class="archon-build-process__step">
+							<h3 class="archon-build-process__step-title">Optimization</h3>
+							<p class="archon-build-process__step-body">Continuously evaluate and improve system performance, workflows, and operational stability.</p>
+						</article>
 				</div>
 			</div>
 		</div>
@@ -2809,6 +2735,8 @@ AI only delivers value when it is engineered for scale, governance, and operatio
     
 
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         (function () {
             function initArchonBuildProcessTimeline() {
@@ -2817,113 +2745,91 @@ AI only delivers value when it is engineered for scale, governance, and operatio
                 if (!section || !timeline || timeline.dataset.timelineInitialized === "true") return;
                 timeline.dataset.timelineInitialized = "true";
 
-                var baseLine = timeline.querySelector(".archon-build-process__line-base");
-                var progressLine = timeline.querySelector(".archon-build-process__line-progress");
-                var steps = timeline.querySelectorAll(".archon-build-process__step");
-                var circles = timeline.querySelectorAll(".archon-build-process__step-circle");
-                if (!baseLine || !progressLine || !steps.length || !circles.length) return;
-
-                var active = false;
-                var ticking = false;
-                var startX = 0;
-                var endX = 0;
-                var totalWidth = 0;
-                var circleRatios = [];
-
-                function clamp(v, min, max) {
-                    return Math.min(max, Math.max(min, v));
-                }
-
-                function measureLine() {
-                    var timelineRect = timeline.getBoundingClientRect();
-                    var centers = [];
-                    circles.forEach(function (circle) {
-                        var rect = circle.getBoundingClientRect();
-                        centers.push((rect.left - timelineRect.left) + (rect.width / 2));
-                    });
-                    if (!centers.length) return;
-
-                    var circleRadius = circles[0].getBoundingClientRect().width / 2;
-                    startX = centers[0] + circleRadius;
-                    endX = centers[centers.length - 1] - circleRadius;
-                    totalWidth = Math.max(1, endX - startX);
-                    circleRatios = centers.map(function (x) { return (x - startX) / totalWidth; });
-
-                    baseLine.style.left = startX.toFixed(2) + "px";
-                    baseLine.style.width = totalWidth.toFixed(2) + "px";
-                    progressLine.style.left = startX.toFixed(2) + "px";
-                    progressLine.style.width = "0px";
-                }
-
-                function updateTimeline() {
-                    ticking = false;
-                    if (!active) return;
-
-                    var vh = window.innerHeight || document.documentElement.clientHeight;
-                    var scrollY = window.scrollY || window.pageYOffset || 0;
-                    var rect = section.getBoundingClientRect();
-                    var sectionTop = rect.top + scrollY;
-                    var sectionRange = Math.max(1, section.offsetHeight - vh);
-                    var progress = clamp((scrollY - sectionTop) / sectionRange, 0, 1);
-                    var progressWidth = totalWidth * progress;
-                    progressLine.style.width = progressWidth.toFixed(2) + "px";
-
-                    steps.forEach(function (step, index) {
-                        var threshold = circleRatios[index] || 0;
-                        step.classList.toggle("is-active", progress >= threshold - 0.01);
-                    });
-
-                    if (progress >= 0.995) {
-                        steps.forEach(function (step) { step.classList.add("is-active"); });
-                    }
-                }
-
-                function requestUpdate() {
-                    if (ticking) return;
-                    ticking = true;
-                    window.requestAnimationFrame(updateTimeline);
-                }
-
-                function onResize() {
-                    measureLine();
-                    requestUpdate();
-                }
-
-                function attach() {
-                    if (active) return;
-                    active = true;
-                    window.addEventListener("scroll", requestUpdate, { passive: true });
-                    window.addEventListener("resize", onResize);
-                    onResize();
-                }
-
-                function detach() {
-                    active = false;
-                    window.removeEventListener("scroll", requestUpdate);
-                    window.removeEventListener("resize", onResize);
-                }
+                var steps = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step"));
+                var bodies = Array.prototype.slice.call(timeline.querySelectorAll(".archon-build-process__step-body"));
+                if (!steps.length || !bodies.length) return;
 
                 if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                    measureLine();
-                    progressLine.style.width = totalWidth.toFixed(2) + "px";
-                    steps.forEach(function (step) { step.classList.add("is-active"); });
+                    steps.forEach(function (step, index) {
+                        var body = bodies[index];
+                        step.style.opacity = index === 0 ? "1" : "0.5";
+                        step.style.transform = index === 0 ? "scale(1)" : "scale(0.9)";
+                        step.style.flexGrow = index === 0 ? "3.4" : "1";
+                        step.style.background = index === 0 ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)";
+                        if (body) {
+                            body.style.opacity = index === 0 ? "1" : "0";
+                            body.style.maxHeight = index === 0 ? "220px" : "0px";
+                            body.style.visibility = index === 0 ? "visible" : "hidden";
+                        }
+                    });
                     return;
                 }
 
-                if ("IntersectionObserver" in window) {
-                    var observer = new IntersectionObserver(function (entries) {
-                        entries.forEach(function (entry) {
-                            if (entry.isIntersecting) {
-                                attach();
-                            } else {
-                                detach();
-                            }
-                        });
-                    }, { threshold: 0 });
-                    observer.observe(section);
-                } else {
-                    attach();
+                if (!window.gsap || !window.ScrollTrigger) return;
+
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.set(steps, {
+                    flexGrow: 1,
+                    scale: 0.9,
+                    opacity: 0.5,
+                    x: 0,
+                    backgroundColor: "rgba(255, 255, 255, 0.04)"
+                });
+                gsap.set(bodies, { autoAlpha: 0, maxHeight: 0 });
+
+                function buildCardTween(activeIndex) {
+                    return gsap.timeline()
+                        .to(steps, {
+                            duration: 1,
+                            flexGrow: function (_, target) {
+                                return steps.indexOf(target) === activeIndex ? 3.4 : 1;
+                            },
+                            scale: function (_, target) {
+                                return steps.indexOf(target) === activeIndex ? 1 : 0.9;
+                            },
+                            opacity: function (_, target) {
+                                return steps.indexOf(target) === activeIndex ? 1 : 0.5;
+                            },
+                            x: function (_, target) {
+                                var index = steps.indexOf(target);
+                                if (index < activeIndex) return -12;
+                                if (index > activeIndex) return 12;
+                                return 0;
+                            },
+                            backgroundColor: function (_, target) {
+                                return steps.indexOf(target) === activeIndex ? "rgba(161, 0, 255, 0.14)" : "rgba(255, 255, 255, 0.04)";
+                            },
+                            ease: "power2.inOut"
+                        }, 0)
+                        .to(bodies, {
+                            duration: 0.55,
+                            autoAlpha: function (_, target) {
+                                return bodies.indexOf(target) === activeIndex ? 1 : 0;
+                            },
+                            maxHeight: function (_, target) {
+                                return bodies.indexOf(target) === activeIndex ? 220 : 0;
+                            },
+                            ease: "power2.out"
+                        }, 0.15);
                 }
+
+                var cardsTl = gsap.timeline({
+                    defaults: { overwrite: "auto" },
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "+=260%",
+                        scrub: true,
+                        pin: true,
+                        anticipatePin: 1
+                    }
+                });
+
+                cardsTl.add(buildCardTween(0));
+                cardsTl.add(buildCardTween(1));
+                cardsTl.add(buildCardTween(2));
+                cardsTl.add(buildCardTween(3));
             }
 
             window.addEventListener("DOMContentLoaded", initArchonBuildProcessTimeline);

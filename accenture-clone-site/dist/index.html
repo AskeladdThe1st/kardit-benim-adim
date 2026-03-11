@@ -2524,30 +2524,17 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 
 
 
-<div class="rad-mixed-media-and-text rad-mixed-media-and-text--with-optional rad-spacing-vertical-md" id="mixedmediatextblock-178a5a195b" data-cmp-data-layer="{&quot;mixedmediatextblock-178a5a195b&quot;:{&quot;@type&quot;:&quot;cio-sites/components/rad/blocks/mixedmediatextblock&quot;,&quot;analytics-module-name&quot;:&quot;mixedmediatextblock-1&quot;,&quot;analytics-template-zone&quot;:&quot;block-our-culture&quot;}}">
-	
-	<div class="rad-mixed-media-and-text__media">
-		
-		<img class="rad-mixed-media-and-text__primary-media rad-mixed-media-and-text__primary-image" src="/assets/teamwork-nc6XJTxq.avif" alt=""> 
-		
-		
+<div class="archon-quote-static-block" id="mixedmediatextblock-178a5a195b">
+		<div class="archon-quote-static-block__media rad-mixed-media-and-text__media">
+			<img class="archon-quote-static-block__image rad-mixed-media-and-text__primary-media rad-mixed-media-and-text__primary-image" src="/assets/teamwork-nc6XJTxq.avif" alt="">
+		</div>
+		<div class="archon-quote-static-block__text rad-mixed-media-and-text__text">
+			<h3 class="archon-quote-static-block__title rad-mixed-media-and-text__title">"AI adoption is accelerating across every industry.<br>But most initiatives never reach production."</h3>
+			<p class="archon-quote-static-block__description rad-mixed-media-and-text__description">
+				The challenge is not the model - it is the system.<br><br>AI only delivers value when it is engineered for scale, governance, and operational reliability.</p>
+			<p class="archon-quote-attribution">Archon Engineering Perspective</p>
+		</div>
 	</div>
-	<div class="rad-mixed-media-and-text__text">
-		
-		<h3 class="rad-mixed-media-and-text__title">"AI adoption is accelerating across every industry.<br>But most initiatives never reach production."</h3>
-			
-		
-		
-		<p class="rad-mixed-media-and-text__description">
-			The challenge is not the model - it is the system.<br><br>AI only delivers value when it is engineered for scale, governance, and operational reliability.</p>
-		<p class="archon-quote-attribution">Archon Engineering Perspective</p>
-		
-		<a href="careers.html" class="rad-button rad-button--tertiary" data-cmp-clickable="" data-cmp-data-layer="{&quot;mixedmediatextblock-178a5a195b-joinus-cta&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/careers&quot;,&quot;analytics-engagement&quot;:&quot;true&quot;,&quot;analytics-link-type&quot;:&quot;engagement&quot;,&quot;analytics-link-name&quot;:&quot;Join us: Build a career that's as exciting as the world we're shaping&quot;,&quot;analytics-module-name&quot;:&quot;mixedmediatextblock-1&quot;}}" target="_self" data-barba-transition="" aria-label="Join us: Work at the heart of change">
-			<div class="rad-button__text">Join us</div>
-			<div class="rad-button__icon-right rad-icon rad-icon__chevron-right rad-icon--compact" aria-hidden="true"></div>
-		</a>
-	</div>
-</div>
  
 
     
@@ -2585,17 +2572,38 @@ AI only delivers value when it is engineered for scale, governance, and operatio
 }
 }
 
-/* Scoped text sizing and content cleanup for the teamwork quote block only */
-#mixedmediatextblock-178a5a195b .rad-mixed-media-and-text__title {
+/* Static quote block (no reveal/zoom animation) */
+#mixedmediatextblock-178a5a195b.archon-quote-static-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: clamp(2rem, 3vw, 5rem);
+    align-items: start;
+}
+#mixedmediatextblock-178a5a195b .archon-quote-static-block__media {
+    overflow: hidden;
+}
+#mixedmediatextblock-178a5a195b .archon-quote-static-block__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    scale: 1 !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+#mixedmediatextblock-178a5a195b .archon-quote-static-block__text {
+    margin-top: clamp(0.75rem, 1vw, 1.5rem);
+}
+#mixedmediatextblock-178a5a195b .archon-quote-static-block__title {
     font-size: clamp(2rem, 2.8vw, 3.6rem);
     line-height: 1.15;
 }
-#mixedmediatextblock-178a5a195b .rad-mixed-media-and-text__description {
+#mixedmediatextblock-178a5a195b .archon-quote-static-block__description {
     font-size: clamp(1.4rem, 1.8vw, 2.8rem);
     line-height: 1.2;
-}
-#mixedmediatextblock-178a5a195b .rad-button {
-    display: none;
+    margin-top: clamp(2rem, 2.2vw, 3rem);
 }
 #mixedmediatextblock-178a5a195b .archon-quote-attribution {
     margin-top: 2rem;
@@ -2603,6 +2611,19 @@ AI only delivers value when it is engineered for scale, governance, and operatio
     letter-spacing: 0;
     font-size: clamp(1.2rem, 1.4vw, 2rem);
     line-height: 1.2;
+}
+#mixedmediatextblock-178a5a195b,
+#mixedmediatextblock-178a5a195b * {
+    animation: none !important;
+    transition: none !important;
+}
+@media (max-width: 1023px) {
+    #mixedmediatextblock-178a5a195b.archon-quote-static-block {
+        grid-template-columns: 1fr;
+    }
+    #mixedmediatextblock-178a5a195b .archon-quote-static-block__text {
+        margin-top: 1.5rem;
+    }
 }
 
 /* Keep updated slider images at consistent original dimensions */
@@ -2825,93 +2846,5 @@ AI only delivers value when it is engineered for scale, governance, and operatio
             window.addEventListener("radTransitionFinished", initArchonBuildProcessTimeline);
         })();
     </script>
-    <script type="text/javascript">
-        (function () {
-            function initArchonCultureScrollAnimation() {
-                var block = document.getElementById("mixedmediatextblock-178a5a195b");
-                if (!block || block.dataset.scrollAnimationInitialized === "true") return;
-                block.dataset.scrollAnimationInitialized = "true";
-
-                var media = block.querySelector(".rad-mixed-media-and-text__media");
-                var text = block.querySelector(".rad-mixed-media-and-text__text");
-                var title = block.querySelector(".rad-mixed-media-and-text__title");
-                var description = block.querySelector(".rad-mixed-media-and-text__description");
-                var attribution = block.querySelector(".archon-quote-attribution");
-                if (!media || !text || !title || !description) return;
-
-                if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                    media.style.opacity = "1";
-                    media.style.transform = "none";
-                    text.style.opacity = "1";
-                    text.style.transform = "none";
-                    title.style.opacity = "1";
-                    title.style.transform = "none";
-                    description.style.opacity = "1";
-                    description.style.transform = "none";
-                    if (attribution) {
-                        attribution.style.opacity = "1";
-                        attribution.style.transform = "none";
-                    }
-                    return;
-                }
-
-                if (!window.ScrollMagic || !window.TimelineMax || !window.TweenMax) return;
-
-                TweenMax.set(media, { autoAlpha: 0.55, x: -72, scale: 1.06 });
-                TweenMax.set(text, { autoAlpha: 0.4, x: 72 });
-                TweenMax.set(title, { autoAlpha: 0, y: 26 });
-                TweenMax.set(description, { autoAlpha: 0, y: 26 });
-                if (attribution) TweenMax.set(attribution, { autoAlpha: 0, y: 22 });
-
-                var revealTl = new TimelineMax();
-                revealTl
-                    .to(media, 1, {
-                        autoAlpha: 1,
-                        x: 0,
-                        scale: 1,
-                        ease: Power2.easeOut
-                    }, 0)
-                    .to(text, 1, {
-                        autoAlpha: 1,
-                        x: 0,
-                        ease: Power2.easeOut
-                    }, 0)
-                    .to(title, 0.66, {
-                        autoAlpha: 1,
-                        y: 0,
-                        ease: Power2.easeOut
-                    }, 0.16)
-                    .to(description, 0.66, {
-                        autoAlpha: 1,
-                        y: 0,
-                        ease: Power2.easeOut
-                    }, 0.3);
-
-                if (attribution) {
-                    revealTl.to(attribution, 0.6, {
-                        autoAlpha: 1,
-                        y: 0,
-                        ease: Power2.easeOut
-                    }, 0.44);
-                }
-
-                var controller = window.__archonCultureController || new ScrollMagic.Controller();
-                window.__archonCultureController = controller;
-                new ScrollMagic.Scene({
-                    triggerElement: block,
-                    triggerHook: 0.82,
-                    duration: "110%",
-                    reverse: true,
-                    tweenChanges: true
-                })
-                    .setTween(revealTl)
-                    .addTo(controller);
-            }
-
-            window.addEventListener("DOMContentLoaded", initArchonCultureScrollAnimation);
-            window.addEventListener("radTransitionFinished", initArchonCultureScrollAnimation);
-        })();
-    </script>
-
 </body></html>
 

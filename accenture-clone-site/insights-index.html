@@ -2312,65 +2312,105 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", function () {
-            var main = document.querySelector("#main");
+            const main = document.querySelector("#main");
             if (!main) return;
 
-            var oldHero = main.querySelector(".articlehero");
-            var oldFilter = main.querySelector(".filtercardv2");
-            if (!oldHero || !oldFilter) return;
+            const insertionPoint = main.querySelector(".filtercardv2");
+            if (!insertionPoint) return;
 
-            var wrapper = document.createElement("div");
+            // Image paths: replace these filenames when you want to swap visuals.
+            const imagePaths = {
+              hero: "images/insights/globe.png",
+              featured: "images/insights/data-centers.png",
+              ai: "images/insights/Ai&Data.png",
+              cloud: "images/insights/cloud-benning.png",
+              growth: "images/insights/growth.png"
+            };
+
+            const wrapper = document.createElement("div");
             wrapper.className = "insights-editorial-page";
-            wrapper.innerHTML =
-              '<section class="insights-hero">' +
-                '<div class="insights-shell">' +
-                  '<a class="insights-back" href="/index.html">Back to Home</a>' +
-                  '<div class="insights-hero__grid">' +
-                    '<div class="insights-hero__content">' +
-                      '<p class="insights-eyebrow">Insights</p>' +
-                      '<h1 class="insights-hero__title">Our Insights</h1>' +
-                      '<p class="insights-hero__copy">Our latest thinking on AI, business growth, and transformation. This page is intentionally simple so new ideas, case studies, and point-of-view pieces can be added over time without the site feeling overbuilt.</p>' +
-                      '<div class="insights-hero__actions">' +
-                        '<a class="rad-button rad-button--primary" href="#latest-highlights"><span class="rad-button__text">View highlights</span></a>' +
-                        '<a class="rad-button rad-button--ghost insights-hero__ghost" href="/services.html"><span class="rad-button__text">Explore services</span></a>' +
-                      '</div>' +
-                    '</div>' +
-                    '<div class="insights-hero__media">' +
-                      '<div class="insights-hero-art">' +
-                        '<img class="insights-hero-art__image" src="images/insights/globe.png" alt="Abstract digital globe" />' +
-                      '</div>' +
-                    '</div>' +
-                  '</div>' +
-                '</div>' +
-              '</section>' +
-              '<section class="insights-highlights" id="latest-highlights">' +
-                '<div class="insights-shell">' +
-                  '<div class="insights-section-heading">' +
-                    '<p class="insights-kicker">Latest highlights</p>' +
-                    '<h2>Highlights from a focused and growing insights page</h2>' +
-                  '</div>' +
-                  '<article class="insights-feature-card">' +
-                    '<div class="insights-feature-card__media">' +
-                      '<div class="insights-feature-art">' +
-                        '<img class="insights-feature-art__image" src="images/insights/feature-placeholder.svg" alt="Featured insights artwork" />' +
-                      '</div>' +
-                    '</div>' +
-                    '<div class="insights-feature-card__copy">' +
-                      '<p class="insights-card-tag">Coming soon</p>' +
-                      '<h3>Fresh perspectives are on the way</h3>' +
-                      '<p>As new insights are published, this space can highlight practical thinking on AI, cloud, operating models, and growth. Until then, the page stays concise, credible, and easy to scan.</p>' +
-                      '<a class="insights-inline-link" href="/services.html">Explore services</a>' +
-                    '</div>' +
-                  '</article>' +
-                  '<div class="insights-card-grid">' +
-                    '<a class="insights-mini-card" href="/data-ai.html"><div class="insights-mini-card__art"><img class="insights-mini-card__image" src="images/insights/ai-placeholder.svg" alt="AI and data artwork" /></div><p class="insights-card-tag">Focus area</p><h3>AI and data</h3><p>Practical thinking on intelligence, responsible adoption, and business use cases.</p></a>' +
-                    '<a class="insights-mini-card" href="/cloud.html"><div class="insights-mini-card__art"><img class="insights-mini-card__image" src="images/insights/cloud-placeholder.svg" alt="Cloud and platforms artwork" /></div><p class="insights-card-tag">Focus area</p><h3>Cloud and platforms</h3><p>How modern infrastructure supports faster delivery, resilience, and scale.</p></a>' +
-                    '<a class="insights-mini-card" href="/strategy.html"><div class="insights-mini-card__art"><img class="insights-mini-card__image" src="images/insights/growth-placeholder.svg" alt="Growth and strategy artwork" /></div><p class="insights-card-tag">Focus area</p><h3>Growth and strategy</h3><p>Clear perspectives on reinvention, operating models, and where to place bets.</p></a>' +
-                  '</div>' +
-                '</div>' +
-              '</section>';
+            wrapper.innerHTML = `
+              <section class="insights-hero">
+                <div class="insights-shell">
+                  <a class="insights-back" href="/index.html">Back to Home</a>
+                  <div class="insights-hero__grid">
+                    <div class="insights-hero__content">
+                      <p class="insights-eyebrow">Insights</p>
+                      <h1 class="insights-hero__title">Our Insights</h1>
+                      <p class="insights-hero__copy">Our latest thinking on AI, business growth, and transformation. This page is intentionally simple so new ideas, case studies, and point-of-view pieces can be added over time without the site feeling overbuilt.</p>
+                      <div class="insights-hero__actions">
+                        <a class="rad-button rad-button--primary" href="#latest-highlights"><span class="rad-button__text">View highlights</span></a>
+                        <a class="rad-button rad-button--ghost insights-hero__ghost" href="/services.html"><span class="rad-button__text">Explore services</span></a>
+                      </div>
+                    </div>
+                    <div class="insights-hero__media">
+                      <!-- Hero image: change imagePaths.hero above -->
+                      <div class="insights-hero-art">
+                        <img class="insights-hero-art__image" src="${imagePaths.hero}" alt="Abstract digital globe" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-            oldFilter.insertAdjacentElement("afterend", wrapper);
+              <section class="insights-highlights" id="latest-highlights">
+                <div class="insights-shell">
+                  <div class="insights-section-heading">
+                    <p class="insights-kicker">Latest highlights</p>
+                    <h2>Highlights from a focused and growing insights page</h2>
+                  </div>
+
+                  <article class="insights-feature-card">
+                    <div class="insights-feature-card__media">
+                      <!-- Featured image: change imagePaths.featured above -->
+                      <div class="insights-feature-art">
+                        <img class="insights-feature-art__image" src="${imagePaths.featured}" alt="Featured insights artwork" />
+                      </div>
+                    </div>
+                    <div class="insights-feature-card__copy">
+                      <p class="insights-card-tag">Coming soon</p>
+                      <h3>Fresh perspectives are on the way</h3>
+                      <p>As new insights are published, this space can highlight practical thinking on AI, cloud, operating models, and growth. Until then, the page stays concise, credible, and easy to scan.</p>
+                      <a class="insights-inline-link" href="/services.html">Explore services</a>
+                    </div>
+                  </article>
+
+                  <div class="insights-card-grid">
+                    <a class="insights-mini-card" href="/data-ai.html">
+                      <!-- Card 1 image: change imagePaths.ai above -->
+                      <div class="insights-mini-card__art">
+                        <img class="insights-mini-card__image" src="${imagePaths.ai}" alt="AI and data artwork" />
+                      </div>
+                      <p class="insights-card-tag">Focus area</p>
+                      <h3>AI and data</h3>
+                      <p>Practical thinking on intelligence, responsible adoption, and business use cases.</p>
+                    </a>
+
+                    <a class="insights-mini-card" href="/cloud.html">
+                      <!-- Card 2 image: change imagePaths.cloud above -->
+                      <div class="insights-mini-card__art">
+                        <img class="insights-mini-card__image" src="${imagePaths.cloud}" alt="Cloud and platforms artwork" />
+                      </div>
+                      <p class="insights-card-tag">Focus area</p>
+                      <h3>Cloud and platforms</h3>
+                      <p>How modern infrastructure supports faster delivery, resilience, and scale.</p>
+                    </a>
+
+                    <a class="insights-mini-card" href="/strategy.html">
+                      <!-- Card 3 image: change imagePaths.growth above -->
+                      <div class="insights-mini-card__art">
+                        <img class="insights-mini-card__image" src="${imagePaths.growth}" alt="Growth and strategy artwork" />
+                      </div>
+                      <p class="insights-card-tag">Focus area</p>
+                      <h3>Growth and strategy</h3>
+                      <p>Clear perspectives on reinvention, operating models, and where to place bets.</p>
+                    </a>
+                  </div>
+                </div>
+              </section>
+            `;
+
+            insertionPoint.insertAdjacentElement("afterend", wrapper);
           });
         </script>
 

@@ -414,12 +414,117 @@
     
 
     
-<style>
-.custom-footer{background:#000;color:#fff;padding:20px 0;}
-.custom-footer__nav{text-align:center;margin-bottom:10px;}
-.custom-footer__nav a{color:#fff;margin:0 15px;text-decoration:none;font-size:14px;}
-.custom-footer__copyright{text-align:center;font-size:14px;}
-</style>
+	<style>
+		.ArchonLogo {
+			display: inline-flex;
+			align-items: center;
+			gap: 0px;
+			text-decoration: none;
+			transform: translateZ(0);
+			transition: transform 220ms ease;
+		}
+
+		.ArchonLogo__icon {
+			width: 28px;
+			height: 28px;
+			display: block;
+			overflow: visible;
+			filter: drop-shadow(0 0 0 rgba(161, 0, 255, 0));
+			transition: filter 240ms ease;
+		}
+
+		.ArchonLogo__glyph--main {
+			transform-origin: center;
+			transform-box: fill-box;
+			transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+		}
+
+		.ArchonLogo__glyph--cut {
+			transition: opacity 240ms ease;
+		}
+
+		.ArchonLogo__text {
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			color: #E2E8F0;
+			opacity: 1;
+			transform: translateX(0);
+			pointer-events: none;
+			white-space: nowrap;
+		}
+
+		.ArchonLogo:hover,
+		.ArchonLogo:focus-visible {
+			transform: translateY(-1px);
+		}
+
+		.ArchonLogo:hover .ArchonLogo__icon,
+		.ArchonLogo:focus-visible .ArchonLogo__icon {
+			filter: drop-shadow(0 0 8px rgba(161, 0, 255, 0.55));
+		}
+
+		.ArchonLogo:hover .ArchonLogo__glyph--main,
+		.ArchonLogo:focus-visible .ArchonLogo__glyph--main {
+			transform: scale(1.04);
+		}
+
+		.ArchonLogo:hover .ArchonLogo__glyph--cut,
+		.ArchonLogo:focus-visible .ArchonLogo__glyph--cut {
+			opacity: 0.7;
+		}
+
+		.custom-footer {
+			background: #000;
+			color: #a8b0bc;
+			font-family: inherit;
+			font-size: 1rem;
+			line-height: 1.5;
+			padding: 34px 0 40px;
+		}
+
+		.custom-footer::before {
+			content: "";
+			display: block;
+			width: min(1200px, 84%);
+			margin: 0 auto;
+			border-top: 1px solid #1b1f26;
+			margin-bottom: 34px;
+		}
+
+		.custom-footer__nav {
+			max-width: 960px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 14px 30px;
+		}
+
+		.custom-footer__nav a {
+			color: #a8b0bc;
+			font-family: inherit;
+			text-decoration: none;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			letter-spacing: 0;
+			transition: color .2s ease;
+		}
+
+		.custom-footer__nav a:hover {
+			color: #a100ff;
+		}
+
+		.custom-footer__copyright {
+			text-align: center;
+			font-family: inherit;
+			font-size: 1rem;
+			font-weight: 400;
+			color: #7e8794;
+			margin-top: 28px;
+		}
+	</style>
   <link rel="stylesheet" crossorigin href="/assets/insights-index-CyqPsqbS.css">
   <link rel="stylesheet" crossorigin href="/assets/clientlib-rad.lc-4999ccd97a51a617f941ae6003c8f430-lc-DaISf84j.css">
 </head>
@@ -483,21 +588,23 @@
 				</div>
 
 
-				<div class="rad-global-nav__logo" data-cmp-data-layer="{&quot;globalnav_copy-logo-fcf088ebf9&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;logo&quot;,&quot;analytics-link-name&quot;:&quot;accenture logo - header&quot;,&quot;analytics-module-name&quot;:&quot;top nav&quot;}}">
-					<a href="/us-en" class="rad-global-nav__static-logo" data-cmp-clickable="" aria-label="Accenture Home"> <svg role="img" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<title>Accenture</title>
-						<path d="M0 22.6L17.66 16.03L0 9.13V0L30.24 12.18V19.75L0 32V22.6Z" fill="#A100FF"></path>
-					</svg>
-					</a> <a href="/us-en" data-cmp-clickable="" class="cmp-logo" aria-label="Accenture Home">
-					<div class="cmp-logo__svg-wrapper">
-						<svg viewBox="0 0 153 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<title>Accenture</title>
-							<path class="cmp-logo__greater-than" d="M0 28.75L22.07 20.54L0 11.92V0.5L37.8 15.72V25.19L0 40.5V28.75Z"></path>
-							<path class="cmp-logo__text" d="M5.76753 39.9342C2.60469 39.9342 0 38.3554 0 34.8263V34.6406C0 30.3686 3.72099 28.8827 8.2792 28.8827H10.4188V28.0468C10.4188 26.2823 9.67457 25.2607 7.81407 25.2607C6.13963 25.2607 5.30241 26.1894 5.20938 27.4896H0.558148C0.930247 23.589 4.00006 21.7316 8.09315 21.7316C12.2793 21.7316 15.3491 23.4962 15.3491 27.8611V39.5627H10.6048V37.5196C9.67457 38.8198 8.09315 39.9342 5.76753 39.9342ZM10.4188 33.8048V32.1331H8.46525C6.04661 32.1331 4.83728 32.7832 4.83728 34.362V34.5477C4.83728 35.7551 5.58148 36.5909 7.25593 36.5909C8.93037 36.498 10.4188 35.5693 10.4188 33.8048ZM26.419 39.9342C21.5817 39.9342 18.0468 36.9624 18.0468 31.0187V30.7401C18.0468 24.7964 21.7678 21.6388 26.419 21.6388C30.4191 21.6388 33.6749 23.6819 34.047 28.2326H29.3958C29.1167 26.5609 28.1865 25.4465 26.512 25.4465C24.4655 25.4465 22.9771 27.1181 22.9771 30.5543V31.1115C22.9771 34.6406 24.2794 36.2194 26.512 36.2194C28.1865 36.2194 29.3958 35.0121 29.6749 33.0618H34.1401C33.861 37.1481 31.1633 39.9342 26.419 39.9342ZM44.6519 39.9342C39.8146 39.9342 36.2796 36.9624 36.2796 31.0187V30.7401C36.2796 24.7964 40.0006 21.6388 44.6519 21.6388C48.6519 21.6388 51.9078 23.6819 52.2799 28.2326H47.6286C47.3496 26.5609 46.4193 25.4465 44.7449 25.4465C42.6983 25.4465 41.2099 27.1181 41.2099 30.5543V31.1115C41.2099 34.6406 42.5123 36.2194 44.7449 36.2194C46.4193 36.2194 47.6286 35.0121 47.9077 33.0618H52.3729C52.0938 37.1481 49.3961 39.9342 44.6519 39.9342ZM62.9777 39.9342C57.9544 39.9342 54.5125 36.9624 54.5125 31.1115V30.7401C54.5125 24.8892 58.1404 21.6388 62.8847 21.6388C67.2569 21.6388 70.8848 24.0534 70.8848 29.9042V32.0402H59.4428C59.6288 35.1978 61.0242 36.4051 63.0707 36.4051C64.9312 36.4051 65.9545 35.3836 66.3266 34.1763H70.8848C70.3267 37.4267 67.5359 39.9342 62.9777 39.9342ZM59.5358 28.7898H66.0475C65.9545 26.1894 64.7452 25.075 62.7917 25.075C61.3033 25.1678 59.9079 26.0037 59.5358 28.7898ZM73.8616 22.1031H78.7919V24.7035C79.6291 23.0318 81.3966 21.7316 84.0943 21.7316C87.2572 21.7316 89.3967 23.6819 89.3967 27.8611V39.5627H84.4664V28.604C84.4664 26.5609 83.6292 25.6322 81.8617 25.6322C80.1873 25.6322 78.7919 26.6538 78.7919 28.8827V39.5627H73.8616V22.1031ZM98.4201 16.8095V22.1031H101.769V25.7251H98.4201V33.9905C98.4201 35.2907 98.9783 35.9408 100.188 35.9408C100.932 35.9408 101.397 35.8479 101.862 35.6622V39.4699C101.304 39.6556 100.281 39.8413 99.0713 39.8413C95.2573 39.8413 93.4898 38.0768 93.4898 34.5477V25.7251H91.4433V22.1031H93.4898V18.8527L98.4201 16.8095ZM120.188 39.5627H115.351V36.9624C114.513 38.634 112.839 39.9342 110.234 39.9342C107.071 39.9342 104.746 37.9839 104.746 33.8976V22.1031H109.676V33.2476C109.676 35.2907 110.513 36.2194 112.188 36.2194C113.862 36.2194 115.258 35.105 115.258 32.9689V22.1031H120.188V39.5627ZM123.816 22.1031H128.746V25.3536C129.769 23.0318 131.444 21.9174 134.049 21.9174V26.7466C130.7 26.7466 128.746 27.7682 128.746 30.6472V39.6556H123.816V22.1031ZM144.002 39.9342C138.979 39.9342 135.537 36.9624 135.537 31.1115V30.7401C135.537 24.8892 139.165 21.6388 143.909 21.6388C148.281 21.6388 151.909 24.0534 151.909 29.9042V32.0402H140.56C140.746 35.1978 142.142 36.4051 144.188 36.4051C146.049 36.4051 147.072 35.3836 147.444 34.1763H152.002C151.258 37.4267 148.56 39.9342 144.002 39.9342ZM140.467 28.7898H147.072C146.979 26.1894 145.77 25.075 143.816 25.075C142.328 25.1678 140.932 26.0037 140.467 28.7898Z"></path>
-						</svg>
+					<div class="rad-global-nav__logo" data-cmp-data-layer="{&quot;globalnav_copy-logo-fcf088ebf9&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;logo&quot;,&quot;analytics-link-name&quot;:&quot;archon logo - header&quot;,&quot;analytics-module-name&quot;:&quot;top nav&quot;}}">
+						<a href="index.html" class="ArchonLogo" id="ArchonLogo" data-cmp-clickable="" aria-label="Archon Home">
+							<svg class="ArchonLogo__icon" role="img" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<title>Archon</title>
+								<defs>
+									<linearGradient id="archonGlyphGradInsights" x1="5" y1="29" x2="27" y2="3" gradientUnits="userSpaceOnUse">
+										<stop offset="0" stop-color="#7A00FF"></stop>
+										<stop offset="0.5" stop-color="#B024FF"></stop>
+										<stop offset="1" stop-color="#E44BFF"></stop>
+									</linearGradient>
+								</defs>
+								<path class="ArchonLogo__glyph--main" d="M3 29L14.8 3h2.6L29 29h-5.5l-2-4.8h-11L8.5 29H3ZM12 19.6h8L16 9.7l-4 9.9Z" fill="url(#archonGlyphGradInsights)"></path>
+								<path class="ArchonLogo__glyph--cut" d="M20 15h4.5l-3.1 6.8H17L20 15Z" fill="#050505" opacity="0.9"></path>
+							</svg>
+							<span class="ArchonLogo__text" aria-hidden="true">rchon</span>
+						</a>
 					</div>
-				</a>
-				</div>
 
 				<div class="rad-global-nav__primary-nav" role="toolbar">
 					<button class="rad-icon-button rad-icon-button--primary rad-nav-icon-button rad-global-nav__menu-close" type="button" aria-expanded="false" aria-label="close-menu">
@@ -505,11 +612,11 @@
 						<div class="rad-icon rad-icon--compact rad-icon__close" aria-hidden="true"></div>
 					</button>
 					<ul class="rad-global-nav__menu-items">
-						<li id="globalnav_copy-primarynavlinks-item0-428684c05f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item0-428684c05f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;What we do&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="What we do">
-								<div class="rad-button__text">What we do</div>
-								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
-							</button> <div class="xfpage page basicpage">
+							<li id="globalnav_copy-primarynavlinks-item0-428684c05f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item0-428684c05f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Home&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Home">
+									<div class="rad-button__text">Home</div>
+									<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
+								</button> <div class="xfpage page basicpage">
 
 
     
@@ -793,16 +900,16 @@
 						
 
 
-						<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;What we think&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<a data-cmp-clickable="" class="rad-button rad-button--ghost rad-global-nav__l1--link" href="/us-en/insights-index" target="_self" rel=" ">
-								<div class="rad-button__text">What we think</div>
-							</a></li>
-					
-						<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Who we are&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Who we are">
-								<div class="rad-button__text">Who we are</div>
-								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
-							</button> <div class="xfpage page basicpage">
+							<li id="globalnav_copy-primarynavlinks-item1-92f6c072eb" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item1-92f6c072eb&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/services&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Services&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+								<a data-cmp-clickable="" class="rad-button rad-button--ghost rad-global-nav__l1--link" href="/services.html" target="_self" rel=" ">
+									<div class="rad-button__text">Services</div>
+								</a></li>
+						
+							<li id="globalnav_copy-primarynavlinks-item2-f6fc52286f" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item2-f6fc52286f&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Insights&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Insights" onclick="window.location.href='/insights-index.html'">
+									<div class="rad-button__text">Insights</div>
+									<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
+								</button> <div class="xfpage page basicpage">
 
 
     
@@ -974,11 +1081,11 @@
 
 						
 					
-						<li id="globalnav_copy-primarynavlinks-item3-fee1e9f7d3" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item3-fee1e9f7d3&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en/insights-index&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Careers&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
-							<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Careers">
-								<div class="rad-button__text">Careers</div>
-								<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
-							</button> <div class="xfpage page basicpage">
+							<li id="globalnav_copy-primarynavlinks-item3-fee1e9f7d3" data-cmp-data-layer="{&quot;globalnav_copy-primarynavlinks-item3-fee1e9f7d3&quot;:{&quot;xdm:linkURL&quot;:&quot;/us-en&quot;,&quot;analytics-engagement&quot;:&quot;false&quot;,&quot;analytics-link-type&quot;:&quot;nav/paginate&quot;,&quot;analytics-link-name&quot;:&quot;Contact&quot;,&quot;analytics-module-name&quot;:&quot;primary nav&quot;}}">
+								<button class="rad-button rad-button--ghost rad-global-nav__l1--button" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Contact">
+									<div class="rad-button__text">Contact</div>
+									<div class="rad-button__icon-right rad-icon rad-icon__chevron-down rad-icon--compact"></div>
+								</button> <div class="xfpage page basicpage">
 
 
     
@@ -2160,18 +2267,18 @@
     </div>
 
 </main>
-<footer class="custom-footer">
+<footer class="custom-footer" id="footer">
   <nav class="custom-footer__nav">
     <a href="#">Home</a>
-    <a href="#">Pricing</a>
-    <a href="#">FAQ</a>
-    <a href="#">Changelog</a>
-    <a href="#">License</a>
-    <a href="#">Gumroad</a>
+    <a href="#">Services</a>
+    <a href="#">Insights</a>
     <a href="#">Contact</a>
   </nav>
   <div class="custom-footer__copyright">
-    &copy; 2020 - 2022 Anron. Built with Webflow. All rights reserved.
+    Archon provides advisory and engineering services and does not provide legal, regulatory, or compliance certification services.
+  </div>
+  <div class="custom-footer__copyright">
+    &copy; 2026 Archon Systems. All rights reserved.
   </div>
 </footer>
 
@@ -2359,4 +2466,5 @@
         
     
 
+<script src="js/accenture-change-more-quick-fix.js" type="text/javascript"></script>
 </body></html>

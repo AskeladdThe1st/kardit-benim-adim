@@ -51,7 +51,7 @@ body {
 
 .insights-editorial-page {
   background: var(--insights-bg);
-  padding-top: 84px;
+  padding-top: 48px;
 }
 
 .insights-hero,
@@ -60,7 +60,7 @@ body {
 }
 
 .insights-hero {
-  padding: 28px 0 42px;
+  padding: 12px 0 42px;
   border-bottom: 1px solid var(--insights-border);
 }
 
@@ -81,10 +81,10 @@ body {
 
 .insights-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.74fr);
   gap: 36px;
   align-items: center;
-  padding-top: 28px;
+  padding-top: 14px;
 }
 
 .insights-eyebrow,
@@ -135,9 +135,15 @@ body {
   color: var(--insights-text) !important;
 }
 
+.insights-hero__media {
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+}
+
 .insights-hero__media,
 .insights-hero-art {
-  min-height: 300px;
+  min-height: 240px;
 }
 
 .insights-hero-art,
@@ -168,6 +174,14 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.insights-feature-art__image,
+.insights-mini-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .insights-hero-art::before,
@@ -211,7 +225,7 @@ body {
 }
 
 .insights-feature-art::before {
-  content: "";
+  content: none;
   position: absolute;
   inset: auto -10% 16% -6%;
   height: 34%;
@@ -222,7 +236,7 @@ body {
 }
 
 .insights-feature-art::after {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;
   background:
@@ -293,76 +307,6 @@ body {
   height: 250px;
 }
 
-.insights-mini-card__art--ai {
-  background:
-    radial-gradient(circle at 24% 30%, rgba(161, 0, 255, 0.34) 0 20%, transparent 21%),
-    radial-gradient(circle at 76% 66%, rgba(255, 255, 255, 0.08) 0 16%, transparent 17%),
-    var(--insights-bg);
-}
-
-.insights-mini-card__art--ai::before {
-  content: "";
-  position: absolute;
-  inset: auto 10% 18% 10%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(207, 135, 255, 0), rgba(207, 135, 255, 0.9), rgba(161, 0, 255, 0.95), rgba(207, 135, 255, 0));
-  box-shadow:
-    0 -26px 0 rgba(207, 135, 255, 0.2),
-    0 26px 0 rgba(207, 135, 255, 0.28);
-}
-
-.insights-mini-card__art--cloud {
-  background: var(--insights-bg);
-}
-
-.insights-mini-card__art--cloud::before {
-  content: "";
-  position: absolute;
-  inset: 16% 14%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    linear-gradient(90deg, transparent 0 28%, rgba(255, 255, 255, 0.08) 28% 29%, transparent 29% 71%, rgba(255, 255, 255, 0.08) 71% 72%, transparent 72%),
-    linear-gradient(180deg, transparent 0 34%, rgba(255, 255, 255, 0.08) 34% 35%, transparent 35% 65%, rgba(255, 255, 255, 0.08) 65% 66%, transparent 66%);
-}
-
-.insights-mini-card__art--cloud::after {
-  content: "";
-  position: absolute;
-  inset: auto 18% 18% auto;
-  width: 124px;
-  height: 72px;
-  border: 2px solid rgba(255, 255, 255, 0.72);
-  border-radius: 999px;
-  border-bottom-left-radius: 30px;
-  background: rgba(161, 0, 255, 0.04);
-}
-
-.insights-mini-card__art--growth {
-  background: var(--insights-bg);
-}
-
-.insights-mini-card__art--growth::before,
-.insights-mini-card__art--growth::after {
-  content: "";
-  position: absolute;
-  left: -8%;
-  width: 116%;
-  border-top: 4px solid;
-  border-radius: 999px;
-}
-
-.insights-mini-card__art--growth::before {
-  bottom: 72px;
-  height: 88px;
-  border-color: rgba(207, 135, 255, 0.95);
-}
-
-.insights-mini-card__art--growth::after {
-  bottom: 42px;
-  height: 64px;
-  border-color: rgba(176, 106, 255, 0.74);
-}
-
 .insights-mini-card .insights-card-tag,
 .insights-mini-card h3,
 .insights-mini-card p {
@@ -395,8 +339,13 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .insights-hero__media {
+    max-width: none;
+    margin-left: 0;
+  }
+
   .insights-editorial-page {
-    padding-top: 70px;
+    padding-top: 44px;
   }
 
   .insights-hero__title,
@@ -413,21 +362,21 @@ body {
   }
 
   .insights-editorial-page {
-    padding-top: 58px;
+    padding-top: 36px;
   }
 
   .insights-hero {
-    padding: 18px 0 34px;
+    padding: 8px 0 34px;
   }
 
   .insights-hero__grid {
     gap: 22px;
-    padding-top: 22px;
+    padding-top: 10px;
   }
 
   .insights-hero__media,
   .insights-hero-art {
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .insights-feature-card {

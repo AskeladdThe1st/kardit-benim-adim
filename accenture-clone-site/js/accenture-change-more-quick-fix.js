@@ -1,4 +1,4 @@
-// // Change more - Quick fix - 4/27/2023
+// Shared navbar and cookie quick fix for legacy imported pages.
 var href_window = window.location.href;
 
 function disableCookieBanner() {
@@ -95,7 +95,7 @@ $(function() {
         var rad_card_a = $(this);
         if(rad_card_a.attr("target").indexOf("blank") > -1){
             if(rad_card_a.attr("title") == undefined || rad_card_a.attr("title") == "") {
-                rad_card_a.attr("title", "This opens a new tab away from Accenture.com.");
+                rad_card_a.attr("title", "This opens a new tab.");
             }
         }
     });

@@ -1,32 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 848" role="img" aria-label="Technical line art illustration">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 848" role="img" aria-label="Gotham inspired cloud and AI architecture artwork">
   <defs>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="#d9d9d9" stroke-width="1"/>
+    <linearGradient id="cloudBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="1" stop-color="#12161d"/>
+    </linearGradient>
+    <pattern id="cloudGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#1f2430" stroke-width="1"/>
     </pattern>
+    <linearGradient id="cloudStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe072"/>
+      <stop offset="1" stop-color="#c79200"/>
+    </linearGradient>
   </defs>
-  <rect width="600" height="848" fill="#f3f3f3"/>
-  <rect width="600" height="848" fill="url(#grid)" opacity="0.6"/>
-  <g fill="none" stroke="#202020" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="0" y="490" width="600" height="24"/>
-    <circle cx="180" cy="690" r="110"/>
-    <circle cx="360" cy="640" r="84"/>
-    <circle cx="455" cy="700" r="72"/>
-    <rect x="42" y="415" width="120" height="84" rx="8"/>
-    <path d="M42 445h120M66 414v84M138 414v84"/>
-    <path d="M205 360h155v22H205z"/>
-    <path d="M205 360c-8-42 22-90 67-104m88 104c8-42-22-90-67-104"/>
-    <circle cx="273" cy="255" r="16"/>
-    <circle cx="342" cy="255" r="16"/>
-    <path d="M273 271v43m69-43v43"/>
-    <path d="M242 558h135l30 55H212z"/>
-    <rect x="252" y="530" width="56" height="28" rx="4"/>
-    <path d="M105 635l110 38M90 670h70M275 688l30-48m110 20l75 45"/>
-    <path d="M438 425c36-32 98-24 126 17"/>
-    <path d="M480 394l26-26m28 17l28-11m-68 74h54"/>
-    <path d="M470 484l34 14m32 8l24-25"/>
-    <rect x="14" y="602" width="160" height="80" rx="8"/>
-    <path d="M34 650c20-20 38-16 54 4 14-28 44-23 68 3"/>
-    <path d="M355 572l52-26 30 38-40 28z"/>
-    <path d="M420 548l62 20-16 47-62-20z"/>
+  <rect width="600" height="848" fill="url(#cloudBg)"/>
+  <rect width="600" height="848" fill="url(#cloudGrid)" opacity="0.68"/>
+  <g fill="none" stroke="url(#cloudStroke)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M176 256c18-78 84-132 166-132 74 0 138 44 164 112 54 5 96 50 96 105 0 59-48 107-107 107H176c-63 0-114-50-114-111s51-111 114-111Z" stroke-width="8"/>
+    <path d="M92 520H510" stroke-width="7" opacity="0.9"/>
+    <path d="M130 560H468" stroke-width="4" opacity="0.7"/>
+    <path d="M150 204V92m96 78V60m96 110V86m96 138V126" stroke-width="5" opacity="0.8"/>
+    <path d="M118 540V700m92-140V760m92-130V718m92-150V760m92-118V716" stroke-width="4" opacity="0.72"/>
+    <path d="M204 336l-86 66m178-94l-62 128m170-106-96 102m124-32-72 54" stroke-width="4" opacity="0.76"/>
+  </g>
+  <g fill="#f3c623">
+    <circle cx="176" cy="256" r="9"/>
+    <circle cx="342" cy="124" r="9"/>
+    <circle cx="506" cy="236" r="9"/>
+    <circle cx="118" cy="402" r="9"/>
+    <circle cx="296" cy="308" r="9"/>
+    <circle cx="404" cy="330" r="9"/>
+    <circle cx="532" cy="400" r="9"/>
+    <circle cx="118" cy="700" r="8"/>
+    <circle cx="210" cy="760" r="8"/>
+    <circle cx="394" cy="760" r="8"/>
+    <circle cx="486" cy="716" r="8"/>
+  </g>
+  <g opacity="0.14" fill="#f3c623">
+    <circle cx="104" cy="120" r="60"/>
+    <circle cx="494" cy="704" r="82"/>
   </g>
 </svg>

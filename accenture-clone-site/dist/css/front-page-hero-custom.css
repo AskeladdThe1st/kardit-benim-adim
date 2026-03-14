@@ -49,9 +49,9 @@
             --animation-delay-2: 1500ms;
             --animation-timing-1: cubic-bezier(0.22, 0, 0.63, 1);
             --animation-timing-2: cubic-bezier(0.38, 0, 0, 1);
-            --Dark-Brand-Primary: #A100FF;
-            --Dark-Brand-Secondary: #7500C0;
-            --Dark-Brand-Tertiary: #460073;
+            --Dark-Brand-Primary: #F3C623;
+            --Dark-Brand-Secondary: #C79200;
+            --Dark-Brand-Tertiary: #7A5A00;
             --Dark-Background-Primary: #000;
             --Dark-Text-Primary: #fff;
         }
@@ -482,7 +482,7 @@
         .archon-credibility-band__icon {
             width: 18px;
             height: 18px;
-            color: #a100ff;
+            color: #f3c623;
             display: inline-flex;
             align-items: center;
             justify-content: center;

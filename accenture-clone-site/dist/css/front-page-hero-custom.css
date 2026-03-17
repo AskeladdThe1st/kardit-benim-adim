@@ -633,3 +633,37 @@
             visibility: visible !important;
             z-index: 4;
         }
+
+        /* Make the first homepage tile read like a true card, not a hero */
+        #research-report-e1abd46e2f {
+            background:
+                linear-gradient(180deg, rgba(8, 11, 26, 0.98) 0%, rgba(12, 15, 34, 0.96) 100%) !important;
+        }
+
+        #research-report-e1abd46e2f .rad-content-grid-card__full-image {
+            inset: clamp(8.75rem, 19vw, 10.75rem) clamp(0.9rem, 2vw, 1.2rem) clamp(1rem, 2vw, 1.2rem) !important;
+            border: 1px solid rgba(148, 115, 255, 0.18);
+            border-radius: 1rem;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(104, 71, 255, 0.28) 0%, rgba(18, 14, 40, 0.94) 58%, rgba(8, 10, 24, 1) 100%);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.05),
+                0 18px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        #research-report-e1abd46e2f .rad-content-grid-card__full-image .image,
+        #research-report-e1abd46e2f .rad-content-grid-card__full-image .cmp-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        #research-report-e1abd46e2f .cmp-image__image {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain;
+            object-position: center center;
+            padding: clamp(0.85rem, 2vw, 1.15rem);
+            transform: none !important;
+            filter: drop-shadow(0 10px 24px rgba(126, 88, 255, 0.22));
+        }

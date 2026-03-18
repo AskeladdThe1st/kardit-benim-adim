@@ -1176,10 +1176,7 @@
     <div id=&quot;hero_headline_h1&quot;>
         <h1>AI TRANSFORMATION, ENGINEERED.</h1>
     </div>
-		    <a class=&quot;hero_custom__cta_1&quot; href=&quot;/services.html&quot;
-		        target=&quot;_self&quot; data-analytics-link-name=&quot;Core Services&quot; data-analytics-module-name=&quot;front-pagehero-1&quot;
-	        data-analytics-template-zone=&quot;front-page-hero&quot; data-analytics-link-type=&quot;engagement&quot; data-barba-transition>
-        <div class=&quot;hero_custom__grid&quot;>
+	        <div class=&quot;hero_custom__grid&quot;>
             <p class=&quot;hero_custom__headline&quot;>
                 <span class=&quot;hero_custom__headline__text hero_custom__headline__text--left&quot; role=&quot;presentation&quot;
                     aria-hidden=&quot;true&quot;>AI TRANSFORMATION,</span>
@@ -1195,21 +1192,24 @@
                         <br><br>
                         We are engineering-led and delivery-focused, emphasizing reliability, accountability, and long-term maintainability.
                     </p>
-	                    <div class=&quot;hero_cta_2&quot;>
-	                        <span class=&quot;cta_span&quot;>Core Services</span>
-	                        <div class=&quot;hero_custom__cta__icon&quot; role=&quot;presentation&quot; aria-hidden=&quot;true&quot;>
-	                            <svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;>
-	                                <path d=&quot;M4.5 10H14.5&quot; />
-	                                <path d=&quot;M10.5 6L14.5 10L10.5 14&quot; />
-	                            </svg>
-	                        </div>
-	                    </div>
-                </div>
-            </article>
-
-        </div>
-    </a>
-    <script async>
+		                    <a class=&quot;hero_custom__cta_1&quot; href=&quot;/services.html&quot;
+		                        target=&quot;_self&quot; data-analytics-link-name=&quot;Core Services&quot; data-analytics-module-name=&quot;front-pagehero-1&quot;
+		                        data-analytics-template-zone=&quot;front-page-hero&quot; data-analytics-link-type=&quot;engagement&quot; data-barba-transition>
+		                        <div class=&quot;hero_cta_2&quot;>
+		                            <span class=&quot;cta_span&quot;>Core Services</span>
+		                            <div class=&quot;hero_custom__cta__icon&quot; role=&quot;presentation&quot; aria-hidden=&quot;true&quot;>
+		                                <svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;>
+		                                    <path d=&quot;M4.5 10H14.5&quot; />
+		                                    <path d=&quot;M10.5 6L14.5 10L10.5 14&quot; />
+		                                </svg>
+		                            </div>
+		                        </div>
+		                    </a>
+		                </div>
+	            </article>
+	
+	        </div>
+	    <script async>
         &quot;use strict&quot;; const customEvent_radTransitionStarted = &quot;radTransitionStarted&quot;, customEvent_radTransitionFinished = &quot;radTransitionFinished&quot;; function handleHeroCustomElement() { let e = 0; const t = window.setInterval((() => { e > 2e3 &amp;&amp; window.clearInterval(t); const n = document.getElementsByClassName(&quot;hero_custom&quot;)[0]; n ? (window.clearInterval(t), handlePlayPauseHeroCustomBgVideo(n), handleHeroCustomExitAnimation(n)) : e += 200 }), 200) } function handlePlayPauseHeroCustomBgVideo(e) { const t = e.getElementsByClassName(&quot;hero_custom__background--video&quot;)[0], n = e.getElementsByClassName(&quot;hero_custom__video_button&quot;)[0]; if (!t || !n) return null; const s = n.getElementsByClassName(&quot;hero_custom__video_button--play&quot;)[0], o = n.getElementsByClassName(&quot;hero_custom__video_button--pause&quot;)[0], a = &quot;hero_custom__video_button--hidden&quot;, r = async () => { await t.play(), n.title = &quot;Pause background video&quot;, s?.classList.add(a), o?.classList.remove(a) }, i = async () => { try { t.paused ? await r() : (t.pause(), n.title = &quot;Play background video&quot;, s?.classList.remove(a), o?.classList.add(a)) } catch { } }; t?.paused &amp;&amp; r(), n?.addEventListener(&quot;click&quot;, i), addEventListener(customEvent_radTransitionStarted, (() => { n?.removeEventListener(&quot;click&quot;, i) }), { once: !0 }) } function handleHeroCustomExitAnimation(e) { const t = e.getElementsByClassName(&quot;hero_custom__background&quot;), n = e.getElementsByClassName(&quot;hero_custom__grid&quot;)[0], s = e.getElementsByClassName(&quot;hero_custom__headline&quot;)[0], o = e.getElementsByClassName(&quot;hero_custom__headline__text&quot;), a = e.getElementsByClassName(&quot;hero_custom__body&quot;)[0], r = e.getElementsByClassName(&quot;hero_custom__title&quot;)[0]; for (const e of t) e.addEventListener(&quot;error&quot;, (() => e.style.display = &quot;none&quot;), { once: !0 }); const i = (e, t) => { const { sourceStart: n = 0, sourceEnd: s = 1, targetEnd: o, targetStart: a } = t; if (n === s) return e; return ((e, t, n) => e * (1 - n) + t * n)(a, o, ((e, t = 0, n = 1) => Math.min(n, Math.max(t, e)))((e - (r = n)) / (s - r))); var r }, d = () => { const d = e.clientHeight, l = e.clientWidth, c = e.offsetTop, m = Math.max(0, window.scrollY - c), u = Math.min(1, m / d); var _; const E = d * u * .5, v = .5 * m * -1, h = l * ((_ = u) * _ * _), y = i(u, { sourceStart: 0, sourceEnd: .33, targetStart: 1, targetEnd: 0 }).toFixed(3), g = i(u, { sourceStart: 0, sourceEnd: .33, targetStart: 1, targetEnd: 0 }).toFixed(3); if (n &amp;&amp; (n.style.transform = `translateY(${E}px)`), s) { s.style.transform = `translateY(${v}px)`, s.style.opacity = y; const e = .5; for (let t = 0; t < o.length; t++) { const n = o.item(t); n &amp;&amp; (n.style.transform = `translateX(-${h * (1 + t * e)}px)`) } } a &amp;&amp; (a.style.transform = `translate(${h}px, ${v}px)`, a.style.opacity = y), r &amp;&amp; (r.style.transform = `translateY(${v}px)`); for (const e of t) e.style.opacity = g, e.style.transform = `translateY(${E}px)` }; if (&quot;IntersectionObserver&quot; in window) { const t = new IntersectionObserver((e => { e.forEach((e => { e.isIntersecting ? document.addEventListener(&quot;scroll&quot;, d) : document.removeEventListener(&quot;scroll&quot;, d) })) }), { threshold: 0 }); t.observe(e), addEventListener(customEvent_radTransitionStarted, (() => { t.disconnect(), document.removeEventListener(&quot;scroll&quot;, d) }), { once: !0 }) } else document.addEventListener(&quot;scroll&quot;, d), addEventListener(customEvent_radTransitionStarted, (() => { document.removeEventListener(&quot;scroll&quot;, d) }), { once: !0 }) } &quot;undefined&quot; != typeof window &amp;&amp; (window.addEventListener(&quot;DOMContentLoaded&quot;, handleHeroCustomElement), window.addEventListener(&quot;radTransitionFinished&quot;, handleHeroCustomElement));
 
 	    </script>

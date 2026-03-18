@@ -477,6 +477,16 @@
             margin-top: 0;
         }
 
+        #carousel-09c18bca55 .archon-carousel-cta.hero_custom__cta_1 {
+            display: inline-block;
+            float: none;
+            margin: 22px 0 0;
+        }
+
+        #carousel-09c18bca55 .archon-carousel-cta .hero_cta_2 {
+            margin-top: 0;
+        }
+
         @media (min-width: 768px){
             button.hero_custom__video_button {
                 bottom: 20px;

@@ -487,6 +487,128 @@
             margin-top: 0;
         }
 
+        #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        #carousel-09c18bca55 .rad-carousel-image-and-text__play-pause-wrapper,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-next-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button {
+            appearance: none;
+            position: static;
+            width: 54px;
+            height: 54px;
+            min-width: 54px;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: none;
+            color: #fff;
+            transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, opacity 160ms ease;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon {
+            color: inherit;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle .rad-icon:after,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button .rad-icon:after,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button .rad-icon:after {
+            color: inherit;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle:hover,
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle:focus-visible,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:hover,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:focus-visible,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:hover,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:focus-visible {
+            background: #C79200;
+            border-color: #C79200;
+            color: #fff;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle:hover .rad-icon,
+        #carousel-09c18bca55 .rad-carousel__autorotate-toggle:focus-visible .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:hover .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button:focus-visible .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:hover .rad-icon,
+        #carousel-09c18bca55 .rad-carousel-image-and-text__next-button:focus-visible .rad-icon {
+            color: #fff;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__page-numbers {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 64px;
+            height: auto;
+            padding: 0 4px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__page-numbers-current,
+        #carousel-09c18bca55 .rad-carousel__page-numbers-total {
+            min-width: 1.5ch;
+            text-align: center;
+        }
+
+        #carousel-09c18bca55 .rad-carousel__page-numbers span[aria-hidden="true"] {
+            opacity: 0.45;
+            padding: 0 6px;
+        }
+
+        @media (max-width: 767px) {
+            #carousel-09c18bca55 .rad-carousel-image-and-text__custom-controls-wrapper {
+                gap: 10px;
+                margin-bottom: 12px;
+            }
+
+            #carousel-09c18bca55 .rad-carousel-image-and-text__play-pause-wrapper,
+            #carousel-09c18bca55 .rad-carousel-image-and-text__prev-next-wrapper {
+                gap: 8px;
+            }
+
+            #carousel-09c18bca55 .rad-carousel__autorotate-toggle,
+            #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
+            #carousel-09c18bca55 .rad-carousel-image-and-text__next-button,
+            #carousel-09c18bca55 .rad-carousel__page-numbers {
+                width: 46px;
+                height: 46px;
+                min-width: 46px;
+                border-radius: 3px;
+            }
+
+            #carousel-09c18bca55 .rad-carousel__page-numbers {
+                min-width: 56px;
+                height: auto;
+                padding: 0 4px;
+                border: 0;
+                background: transparent;
+            }
+        }
+
         @media (min-width: 768px){
             button.hero_custom__video_button {
                 bottom: 20px;

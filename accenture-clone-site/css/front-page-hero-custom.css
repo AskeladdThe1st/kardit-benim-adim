@@ -502,6 +502,10 @@
             gap: 14px;
         }
 
+        #carousel-09c18bca55 .rad-carousel-image-and-text__play-pause-wrapper {
+            margin-left: 30px;
+        }
+
         #carousel-09c18bca55 .rad-carousel__autorotate-toggle,
         #carousel-09c18bca55 .rad-carousel-image-and-text__prev-button,
         #carousel-09c18bca55 .rad-carousel-image-and-text__next-button {
@@ -588,6 +592,10 @@
             #carousel-09c18bca55 .rad-carousel-image-and-text__play-pause-wrapper,
             #carousel-09c18bca55 .rad-carousel-image-and-text__prev-next-wrapper {
                 gap: 8px;
+            }
+
+            #carousel-09c18bca55 .rad-carousel-image-and-text__play-pause-wrapper {
+                margin-left: 16px;
             }
 
             #carousel-09c18bca55 .rad-carousel__autorotate-toggle,
